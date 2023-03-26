@@ -2,4 +2,4 @@
 
 My attempt at documenting JavaScript, written in Markdown.
 
-Please go read the files
+Go read the files please...
