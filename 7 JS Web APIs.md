@@ -1,4 +1,4 @@
-# JS Web API
+# JS Web APIs
 
 A Web API is a developer's dream.
 
