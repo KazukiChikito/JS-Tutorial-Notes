@@ -543,7 +543,7 @@ The `map()` method allows you to run a function on each item in the array, retur
 
 In React, `map()` can be used to generate lists.
 
-```css
+```js
 const myArray = ['apple', 'banana', 'orange'];
 
 const myList = myArray.map((item) => <p>{item}</p>)
@@ -559,7 +559,7 @@ Destructuring makes it easy to extract only what is needed.
 
 ### 1. Destructing Arrays
 
-```css
+```js
 const vehicles = ['mustang', 'f-150', 'expedition'];
 
 // No destructuring
@@ -578,7 +578,7 @@ const [car3,, suv3] = vehicles;
 
 Destructuring comes in handy when a function returns an array:
 
-```css
+```js
 function calculate(a, b) {
   const add = a + b;
   const subtract = a - b;
@@ -593,7 +593,7 @@ const [add, subtract, multiply, divide] = calculate(6, 9);
 
 ### 2. Destructuring Objects
 
-```css
+```js
 const myVehicle = {
   brand: 'Ford',
   model: 'Mustang',
@@ -620,7 +620,7 @@ declareVehicle2(myVehicle);
 
 We can even destructure deeply nested objects:
 
-```css
+```js
 const myVehicle = {
   brand: 'Ford',
   model: 'Mustang',
@@ -647,7 +647,7 @@ registerState(myVehicle)
 
 The spread operator (`...`) allows us to quickly copy all or part of an existing array or object into another array or object.
 
-```css
+```js
 const numbersOne = [1, 2, 3];
 const numbersTwo = [4, 5, 6];
 
@@ -657,7 +657,7 @@ const numbersCombined = [...numbersOne, ...numbersTwo];
 
 The spread operator is often used in combination with destructuring.
 
-```css
+```js
 const numbers = [1, 2, 3, 4, 5, 6];
 
 // one = 1
@@ -670,7 +670,7 @@ const [one, two, ...rest] = numbers;
 
 We can use the spread operator with objects too:
 
-```css
+```js
 const myVehicle = {
   brand: 'Ford',
   model: 'Mustang',
@@ -699,7 +699,7 @@ The ternary operator is a simplified conditional operator like `if` / `else`.
 
 #### Example
 
-```css
+```js
 // No ternary operator
 if (authenticated) {
   renderApp();
