@@ -25,7 +25,7 @@ document.getElementById("demo").innerHTML = "Hello World!"
 </script>
 ```
 
-## 2 JS Output
+## 2 Output
 
 JS can "display" data in different ways:
 
@@ -35,9 +35,9 @@ JS can "display" data in different ways:
 - Writing into an alert box, using `window.alert()`.
 - Writing into the browser console, using `console.log()`.
 
-## 3 JS Syntax
+## 3 Syntax
 
-### 1. JS Values
+### 1. Values
 The JS syntax defines two types of values:
 
 - Fixed values (Literals)
@@ -58,7 +58,8 @@ JS uses the keywords `var`, `let` and `const` to declare variables:
 let x = 6
 ```
 
-### 2. JS Comments
+### 2. Comments
+
 Not all JS statements are "executed".
 
 Code after double slashes `//` or between `/*` and `*/` is treated as a comment.
@@ -70,7 +71,7 @@ let x = 5 // I will be executed
 // x = 6  I will NOT be executed
 ```
 
-### 3. JS Identifiers / Names
+### 3. Identifiers / Names
 
 Identifiers are JS names.
 
@@ -98,7 +99,7 @@ Historically, programmers have used different ways of joining multiple words int
 
 JS programmers tend to use camel case that starts with a lowercase letter: *firstName*, *lastName*, *masterCard*, *interCity*.
 
-## 4 JS Variables
+## 4 Variables
 
 There are 4 Ways to Declare a JS Variable:
 
@@ -117,7 +118,7 @@ The `let` and `const` keywords were added to JS in 2015.
 
 If you want your code to run in older browsers, you must use `var`.
 
-### 2. When to Use `const`?
+### 2. When to use `const`?
 
 If you want a general rule: always declare variables with `const`.
 
@@ -230,17 +231,17 @@ But you can:
 - Change the elements of constant array
 - Change the properties of constant object
 
-## 7 JS Data Types
+## 7 Data Types
 
-JS has 8 Datatypes
-- String
-- Number
-- Bigint
-- Boolean
-- Undefined
-- Null
-- Symbol
-- Object
+JS has 8 Datatypes:
+- `String`
+- `Number`
+- `Bigint`
+- `Boolean`
+- `Undefined`
+- `Null`
+- `Symbol`
+- `Object`
 
 The object data type can contain:
 
@@ -248,7 +249,7 @@ The object data type can contain:
 - An array
 - A date
 
-## 8 JS Functions
+## 8 Functions
 
 A JS function is a block of code designed to perform a particular task.
 
@@ -258,7 +259,7 @@ The code inside the function will execute when "something" invokes (calls) the f
 - When it is invoked (called) from JS code
 - Automatically (self invoked)
 
-## 9 JS Errors
+## 9 Errors
 
 The `try` statement defines a code block to run (to try).
 
@@ -359,7 +360,7 @@ SyntaxError|	A syntax error has occurred
 TypeError|	A type error has occurred
 URIError|	An error in encodeURI() has occurred
 
-## 10 JS Scope
+## 10 Scope
 
 Scope determines the accessibility (visibility) of variables.
 
@@ -428,7 +429,7 @@ let carName = "Volvo"
 >Your global variables (or functions) can overwrite window variables (or functions).
 >Any function, including the window object, can overwrite your global variables and functions.
 
-## 11 JS Hoisting
+## 11 Hoisting
 
 Hoisting is JS's default behavior of moving *variable* (only with `var`) and *function* declarations to the top.
 
@@ -459,7 +460,7 @@ JS in strict mode does not allow variables to be used if they are not declared.
 >To avoid bugs, always declare all variables at the beginning of every scope.
 >Since this is how JS interprets the code, it is always a good rule.
 
-## 12 JS `"use strict"`
+## 12 `"use strict"`
 
 The purpose of `"use strict"` is to indicate that the code should be executed in "strict mode".
 
@@ -469,7 +470,7 @@ All modern browsers support `"use strict"` except Internet Explorer 9 and lower.
 
 Strict mode is declared by adding `"use strict"` to the beginning of a script or a function.
 
-## 13 JS Modules
+## 13 Modules
 
 JS modules allow you to break up your code into separate files. This makes it easier to maintain a code-base.
 
@@ -532,7 +533,185 @@ import message from "./message.js"
 >Modules only work with the HTTP(s) protocol.
 >A web-page opened via the file:// protocol cannot use import / export.
 
-## 14 JS Debugging
+## 14 Array Methods
+
+There are many JavaScript array methods.
+
+One of the most useful in React is the `map()` array method.
+
+The `map()` method allows you to run a function on each item in the array, returning a new array as the result.
+
+In React, `map()` can be used to generate lists.
+
+```css
+const myArray = ['apple', 'banana', 'orange'];
+
+const myList = myArray.map((item) => <p>{item}</p>)
+```
+
+## 15 Destructuring
+
+To illustrate destructuring, we'll make a sandwich. Do you take everything out of the refrigerator to make your sandwich? No, you only take out the items you would like to use on your sandwich.
+
+Destructuring is exactly the same. We may have an array or object that we are working with, but we only need some of the items contained in these.
+
+Destructuring makes it easy to extract only what is needed.
+
+### 1. Destructing Arrays
+
+```css
+const vehicles = ['mustang', 'f-150', 'expedition'];
+
+// No destructuring
+const car1 = vehicles[0];
+const truck1 = vehicles[1];
+const suv1 = vehicles[2];
+
+// Yes destructuring
+const [car2, truck2, suv2] = vehicles;
+
+// No truck
+const [car3,, suv3] = vehicles;
+```
+
+>When destructuring arrays, the order that variables are declared is important.
+
+Destructuring comes in handy when a function returns an array:
+
+```css
+function calculate(a, b) {
+  const add = a + b;
+  const subtract = a - b;
+  const multiply = a * b;
+  const divide = a / b;
+
+  return [add, subtract, multiply, divide];
+}
+
+const [add, subtract, multiply, divide] = calculate(6, 9);
+```
+
+### 2. Destructuring Objects
+
+```css
+const myVehicle = {
+  brand: 'Ford',
+  model: 'Mustang',
+  type: 'car',
+  year: 2021, 
+  color: 'red'
+}
+
+// No destructuring
+function declareVehicle1(vehicle) {
+  const message = 'My ' + vehicle.type + ' is a ' + vehicle.color + ' ' + vehicle.brand + ' ' + vehicle.model + '.';
+}
+
+// Yes destructuring
+function declareVehicle2({type, color, brand, model}) {
+  const message = 'My ' + type + ' is a ' + color + ' ' + brand + ' ' + model + '.';
+}
+
+declareVehicle1(myVehicle);
+declareVehicle2(myVehicle);
+```
+
+>Notice that the object properties do not have to be declared in a specific order.
+
+We can even destructure deeply nested objects:
+
+```css
+const myVehicle = {
+  brand: 'Ford',
+  model: 'Mustang',
+  type: 'car',
+  year: 2021, 
+  color: 'red',
+  registration: {
+    city: 'Houston',
+    state: 'Texas',
+    country: 'USA'
+  }
+}
+
+function registerState({ model, registration: { state } }) {
+  const message = 'My ' + model + ' is registered in ' + state + '.';
+}
+
+registerState(myVehicle)
+```
+
+## 16 Spread Operator
+
+### 1. Array
+
+The spread operator (`...`) allows us to quickly copy all or part of an existing array or object into another array or object.
+
+```css
+const numbersOne = [1, 2, 3];
+const numbersTwo = [4, 5, 6];
+
+// numbersCombined = [1, 2, 3, 4, 5, 6]
+const numbersCombined = [...numbersOne, ...numbersTwo];
+```
+
+The spread operator is often used in combination with destructuring.
+
+```css
+const numbers = [1, 2, 3, 4, 5, 6];
+
+// one = 1
+// two = 2
+// rest = [3, 4, 5, 6]
+const [one, two, ...rest] = numbers;
+```
+
+### 2. Objects
+
+We can use the spread operator with objects too:
+
+```css
+const myVehicle = {
+  brand: 'Ford',
+  model: 'Mustang',
+  color: 'red'
+}
+
+const updateMyVehicle = {
+  // Combined
+  type: 'car',
+  year: 2021, 
+  
+  // Overwrite color: 'red'
+  color: 'yellow'
+}
+
+const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
+```
+
+## 17 Ternary Operator
+
+The ternary operator is a simplified conditional operator like `if` / `else`.
+
+### 1. Syntax
+
+`condition ? <expression if true> : <expression if false>`
+
+#### Example
+
+```css
+// No ternary operator
+if (authenticated) {
+  renderApp();
+} else {
+  renderLogin();
+}
+
+// Yes ternary operator
+authenticated ? renderApp() : renderLogin();
+```
+
+## 18 Debugging
 
 ### 1. The `console.log()` Method
 
@@ -557,13 +736,13 @@ debugger
 document.getElementById("demo").innerHTML = x
 ```
 
-## 15 JS Best Practices
+## 19 Best Practices
 
 #### Avoid Global Variables
 
 Avoid global variables.
 
-#### Declarations on Top
+### 1. Declarations on Top
 
 Put all declarations at the top of each script or function.
 
@@ -576,7 +755,7 @@ firstName = "John"
 lastName = "Doe"
 ```
 
-#### Initialize Variables
+### 2. Initialize Variables
 
 It is a good coding practice to initialize variables when you declare them.
 
@@ -586,7 +765,7 @@ let firstName = ""
 let lastName = ""
 ```
 
-#### Declare Objects and Arrays with const
+### 3. Declare Objects and Arrays with const
 
 Declaring objects with const will prevent any accidental change of type.
 
@@ -600,17 +779,25 @@ const car = {type:"Fiat", model:"500", color:"white"}
 car = "Fiat"      // Not possible
 ```
 
-#### Don't Use new Object()
+### 4. Don't Use `new Object()`
 
 Basically, use `""` instead of `new String()`
 
 ```js
-let x1 = ""             // new primitive string
+// Do this
+let primitiveString = ""
+// Don't do this
+let stringObject = new String()
+
+// Do this
+let primitiveNumber = 0
+// Don't do this
+let numberObject = new Number()
 ```
 
-#### Use === Comparison
+### 5. Use `===` Comparison
 
-The `==` comparison operator always converts (to matching types) before comparison.
+The `==` comparison operator always converts values or variables to matching types before comparison.
 
 The `===` operator forces comparison of values and type:
 
