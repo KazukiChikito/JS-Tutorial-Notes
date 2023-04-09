@@ -431,7 +431,11 @@ let carName = "Volvo"
 
 ## 11 Hoisting
 
-Hoisting is JS's default behavior of moving *variable* (only with `var`) and *function* declarations to the top.
+Hoisting is JS's default behavior of moving *variable* declared with `var` and *function* declarations to the top.
+
+Variables declared with `let` and `const` or class declarations are not hoisted.
+
+`"strict mode"` prevents hoisting. It does not allow variables to be used before they are declared.
 
 ```js
 // Variable hoisting
@@ -452,8 +456,6 @@ function myFunction(x) {
   return x;
 }
 ```
-
-JS in strict mode does not allow variables to be used if they are not declared.
 
 >Hoisting is (to many developers) an unknown or overlooked behavior of JS.
 >If a developer doesn't understand hoisting, programs may contain bugs (errors).
