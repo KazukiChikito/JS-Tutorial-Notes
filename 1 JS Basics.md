@@ -1,9 +1,13 @@
-## 1 What is JS?
+# JS Basics
 
-- JS (JS) is the world's most popular programming language.
+## 1 Prerequisites
+
+### 1. What is JavaScript?
+
+- JavaScript (JS) is the world's most popular programming language.
 - JS is the programming language of the Web.
 
-## 2 Why Study JS?
+### 2. Why Study JS?
 
 JS is one of the 3 languages all web developers must learn:
 
@@ -11,7 +15,7 @@ JS is one of the 3 languages all web developers must learn:
   2. CSS to specify the layout of web pages
   3. JS to program the behavior of web pages
 
-## 3 Where is JS?
+### 3. Where is JS?
 
 In HTML, JS code is inserted between `<script>` and `</script>` tags.
 
@@ -21,7 +25,7 @@ document.getElementById("demo").innerHTML = "Hello World!"
 </script>
 ```
 
-## 4 JS Output
+## 2 JS Output
 
 JS can "display" data in different ways:
 
@@ -31,9 +35,9 @@ JS can "display" data in different ways:
 - Writing into an alert box, using `window.alert()`.
 - Writing into the browser console, using `console.log()`.
 
-## 5 JS Syntax
+## 3 JS Syntax
 
-### JS Values
+### 1. JS Values
 The JS syntax defines two types of values:
 
 - Fixed values (Literals)
@@ -54,7 +58,7 @@ JS uses the keywords `var`, `let` and `const` to declare variables:
 let x = 6
 ```
 
-### JS Comments
+### 2. JS Comments
 Not all JS statements are "executed".
 
 Code after double slashes `//` or between `/*` and `*/` is treated as a comment.
@@ -66,7 +70,7 @@ let x = 5 // I will be executed
 // x = 6  I will NOT be executed
 ```
 
-### JS Identifiers / Names
+### 3. JS Identifiers / Names
 
 Identifiers are JS names.
 
@@ -83,7 +87,7 @@ Subsequent characters may be letters, digits, underscores, or dollar signs.
 >Numbers are not allowed as the first character in names.
 >This way JS can easily distinguish identifiers from numbers.
 
-### JS and camelCase
+### 4. JS and camelCase
 Historically, programmers have used different ways of joining multiple words into one variable name:
 
 - Hyphens: first-name, last-name, master-card, inter-city.
@@ -94,7 +98,7 @@ Historically, programmers have used different ways of joining multiple words int
 
 JS programmers tend to use camel case that starts with a lowercase letter: *firstName*, *lastName*, *masterCard*, *interCity*.
 
-## 6 JS Variables
+## 4 JS Variables
 
 There are 4 Ways to Declare a JS Variable:
 
@@ -157,7 +161,7 @@ let carName = "Volvo"
 let carName
 ```
 
-## 7 The `let` keyword
+## 5 The `let` keyword
 
 The `let` keyword was introduced in ES6 (2015).
 
@@ -200,7 +204,7 @@ Variables declared inside a { } block cannot be accessed from outside the block:
 
 Variables declared with the `var` keyword cannot have Block Scope, so variables declared inside a { } block can be accessed from outside the block.
 
-## 8 The `const` keyword
+## 6 The `const` keyword
 
 The `const` keyword was introduced in ES6 (2015).
 
@@ -226,7 +230,7 @@ But you can:
 - Change the elements of constant array
 - Change the properties of constant object
 
-## 9 JS Data Types
+## 7 JS Data Types
 
 JS has 8 Datatypes
 - String
@@ -244,7 +248,7 @@ The object data type can contain:
 - An array
 - A date
 
-## 10 JS Functions
+## 8 JS Functions
 
 A JS function is a block of code designed to perform a particular task.
 
@@ -254,7 +258,7 @@ The code inside the function will execute when "something" invokes (calls) the f
 - When it is invoked (called) from JS code
 - Automatically (self invoked)
 
-## 11 JS Errors
+## 9 JS Errors
 
 The `try` statement defines a code block to run (to try).
 
@@ -355,7 +359,7 @@ SyntaxError|	A syntax error has occurred
 TypeError|	A type error has occurred
 URIError|	An error in encodeURI() has occurred
 
-## 11 JS Scope
+## 10 JS Scope
 
 Scope determines the accessibility (visibility) of variables.
 
@@ -424,7 +428,7 @@ let carName = "Volvo"
 >Your global variables (or functions) can overwrite window variables (or functions).
 >Any function, including the window object, can overwrite your global variables and functions.
 
-## 12 JS Hoisting
+## 11 JS Hoisting
 
 Hoisting is JS's default behavior of moving *variable* (only with `var`) and *function* declarations to the top.
 
@@ -455,7 +459,7 @@ JS in strict mode does not allow variables to be used if they are not declared.
 >To avoid bugs, always declare all variables at the beginning of every scope.
 >Since this is how JS interprets the code, it is always a good rule.
 
-## 13 JS `"use strict"`
+## 12 JS `"use strict"`
 
 The purpose of `"use strict"` is to indicate that the code should be executed in "strict mode".
 
@@ -465,45 +469,7 @@ All modern browsers support `"use strict"` except Internet Explorer 9 and lower.
 
 Strict mode is declared by adding `"use strict"` to the beginning of a script or a function.
 
-## 14 JS Arrow Function 
-
-Arrow functions allow us to write shorter function syntax:
-
-Without Arrow:
-```js
-let hello = function(name) {
-  return "Hello " + name
-}
-```
-
-With Arrow:
-```js
-let hello = (name) => {
-  return "Hello " + name
-}
-```
-
-## 15 JS Classes
-
-JS Classes are templates for JS Objects.
-
-#### Example
-
-```js
-class Car {
-  constructor(name, year) {
-    this.name = name
-    this.year = year
-  }
-    age(now) {
-    return now - this.year
-  }
-}
-```
-
-If you do not define a constructor method, JS will add an empty constructor method.
-
-## 16 JS Modules
+## 13 JS Modules
 
 JS modules allow you to break up your code into separate files. This makes it easier to maintain a code-base.
 
@@ -566,7 +532,7 @@ import message from "./message.js"
 >Modules only work with the HTTP(s) protocol.
 >A web-page opened via the file:// protocol cannot use import / export.
 
-## 17 JS Debugging
+## 14 JS Debugging
 
 ### 1. The `console.log()` Method
 
@@ -591,7 +557,7 @@ debugger
 document.getElementById("demo").innerHTML = x
 ```
 
-## 18 JS Best Practices
+## 15 JS Best Practices
 
 #### Avoid Global Variables
 
