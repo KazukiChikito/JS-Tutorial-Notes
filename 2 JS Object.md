@@ -2,7 +2,7 @@
 
 ## 1 Accessors
 
-Accessors are basically Getters and Setters.
+Accessors are basically getters and setters.
 
 #### Example
 
