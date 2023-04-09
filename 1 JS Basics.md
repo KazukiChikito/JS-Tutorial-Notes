@@ -103,9 +103,9 @@ JS programmers tend to use camel case that starts with a lowercase letter: *firs
 
 There are 4 Ways to Declare a JS Variable:
 
-- Using var
-- Using let
-- Using const
+- Using `var`
+- Using `let`
+- Using `const`
 - Using nothing
 
 ### 1. When to use `var`?
